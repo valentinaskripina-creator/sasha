@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Презентация: Секреты дробей</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; overflow: hidden; background: #2b2b2b; }
+        .slider { display: flex; width: 600vw; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .slide { width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; box-sizing: border-box; }
+        h1 { font-size: 5vw; margin-bottom: 20px; text-align: center; }
+        h2 { font-size: 3vw; margin-bottom: 30px; text-align: center; }
+        p, li { font-size: 2vw; line-height: 1.6; max-width: 1000px; margin: 10px 0; }
+        ul { text-align: left; display: inline-block; }
+        .box { background: rgba(255,255,255,0.9); color: #333; padding: 40px; border-radius: 15px; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .controls { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 20px; }
+        button { font-size: 1.5vw; padding: 15px 30px; cursor: pointer; border: none; border-radius: 50px; background: #fff; color: #333; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.2s; }
+        button:hover { background: #f0f0f0; transform: scale(1.05); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        
+        /* Цвета слайдов с красивыми градиентами */
+        .s1 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333; }
+        .s2 { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); color: white; }
+        .s3 { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); color: #333; }
+        .s4 { background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); color: white; }
+        .s5 { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); color: #333; }
+        .s6 { background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); color: white; }
+    </style>
+</head>
+<body>
+
+<div class="slider" id="slider">
+    <!-- Слайд 1 -->
+    <div class="slide s1">
+        <h1>🍕 СЕКРЕТЫ ДРОБЕЙ</h1>
+        <h2>Сокращаем быстро и легко!</h2>
+    </div>
+    
+    <!-- Слайд 2 -->
+    <div class="slide s2">
+        <h2>💡 Главная идея</h2>
+        <div class="box">
+            <p><strong>Сократить дробь</strong> — значит записать порцию более простыми числами.</p>
+            <p>Если взять 4 куска пиццы из 8 (<strong>4/8</strong>), визуально это ровно половина (<strong>1/2</strong>).</p>
+            <p>🏆 <strong>Золотое правило:</strong> Дели и числитель, и знаменатель на <strong>строго одно и то же число</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Слайд 3 -->
+    <div class="slide s3">
+        <h2>🛠 Базовые правила (Часть 1)</h2>
+        <div style="display: flex; gap: 20px;">
+            <div class="box">
+                <h3 style="font-size: 2vw; margin-top: 0;">🎈 1. Охота на нули</h3>
+                <p>Смело зачеркивай нули сверху и снизу.</p>
+                <p><strong>300 / 500 &rarr; 3 / 5</strong></p>
+            </div>
+            <div class="box">
+                <h3 style="font-size: 2vw; margin-top: 0;">✂️ 2. Правило ножниц</h3>
+                <p>Оба четные? Руби пополам, пока не упрешься в нечетное.</p>
+                <p><strong>24 / 36 &rarr; 12 / 18 &rarr; 6 / 9</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Слайд 4 -->
+    <div class="slide s4">
+        <h2>🛠 Базовые правила (Часть 2)</h2>
+        <div style="display: flex; gap: 20px;">
+            <div class="box">
+                <h3 style="font-size: 2vw; margin-top: 0;">🖐 3. Дай пять!</h3>
+                <p>Заканчиваются на 5 или 0? Они точно делятся на 5.</p>
+                <p><strong>15 / 35 &rarr; 3 / 7</strong></p>
+            </div>
+            <div class="box">
+                <h3 style="font-size: 2vw; margin-top: 0;">🧠 4. Таблица умножения</h3>
+                <p>Где они встречаются вместе? (Часто это 3, 7 или 9).</p>
+                <p><strong>21 / 28</strong> (оба делятся на 7) <strong>&rarr; 3 / 4</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Слайд 5 -->
+    <div class="slide s5">
+        <h2>🥷 Трюк Ниндзя: Умножение на целое</h2>
+        <div class="box">
+            <p>Как умножить <strong>1/12 * 6</strong> ?</p>
+            <ul>
+                <li>Целое число всегда прыгает наверх: <strong>(1 * 6) / 12</strong></li>
+                <li>Ищем пару: <strong>6</strong> (наверху) и <strong>12</strong> (внизу) отлично делятся на 6.</li>
+                <li>Зачеркиваем 6 (остается 1). Зачеркиваем 12 (остается 2).</li>
+                <li>Моментальный ответ: <strong>1/2</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Слайд 6 -->
+    <div class="slide s6">
+        <h2>🚨 КРАСНАЯ ЗОНА: Нельзя!</h2>
+        <div class="box" style="background: #fff; color: #d63031;">
+            <ul>
+                <li>⚖️ <strong>Делить на разные числа.</strong> Справедливость — наше всё.</li>
+                <li>➖ <strong>Вычитать вместо деления.</strong> Сокращение — это только деление.</li>
+                <li>💣 <strong>Сокращать с плюсами и минусами.</strong> В (2+x)/2 нельзя зачеркивать двойки. Сокращаем только множители!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="controls">
+    <button id="btn-prev" onclick="move(-1)" disabled>⬅ Назад</button>
+    <button id="btn-next" onclick="move(1)">Вперед ➡</button>
+</div>
+
+<script>
+    let current = 0;
+    const total = 6;
+    function move(step) {
+        current += step;
+        if (current < 0) current = 0;
+        if (current >= total) current = total - 1;
+        document.getElementById('slider').style.transform = `translateX(-${current * 100}vw)`;
+        document.getElementById('btn-prev').disabled = current === 0;
+        document.getElementById('btn-next').disabled = current === total - 1;
+    }
+</script>
+</body>
+</html>
